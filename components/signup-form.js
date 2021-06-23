@@ -1,37 +1,46 @@
-import { useState } from 'react';
-import { Input, Icon, MonochromeIcons, CallToAction } from '@magiclabs/ui';
+import { useState } from "react";
+import { Input, Icon, MonochromeIcons, CallToAction } from "@magiclabs/ui";
 
-const EmailForm = ({ onEmailSubmit, disabled }) => {
-  const [email, setEmail] = useState('');
+const SignupForm = ({ onEmailSubmit, disabled }) => {
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    onEmailSubmit(email);
+    onEmailSubmit(email, username);
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h3 className='form-header'>Login</h3>
-        <div className='input-wrapper'>
+        <h3 className="form-header">Sign up</h3>
+        <div className="input-wrapper">
           <Input
-            placeholder='Enter your email'
-            size='sm'
-            type='email'
+            placeholder="Enter your email"
+            size="sm"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             prefix={<Icon inline type={MonochromeIcons.Envelope} size={22} />}
+          />
+          <Input
+            placeholder="Username"
+            size="sm"
+            type="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            prefix={<Icon inline type={MonochromeIcons.Astronaut} size={22} />}
           />
         </div>
         <div>
           <CallToAction
             leadingIcon={MonochromeIcons.PaperPlane}
-            color='primary'
-            size='sm'
+            color="primary"
+            size="sm"
             disabled={disabled}
             onClick={handleSubmit}
           >
-            Send Magic Link
+            Sign up
           </CallToAction>
         </div>
       </form>
@@ -55,4 +64,4 @@ const EmailForm = ({ onEmailSubmit, disabled }) => {
   );
 };
 
-export default EmailForm;
+export default SignupForm;
