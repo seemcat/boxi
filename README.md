@@ -1,12 +1,12 @@
 # Boxi
-A super simple, secure social media site where you can share photos of your kitties and see other people's kitty galleries! Used [Magic](https://magic.link/) to enable passwordless auth, [Next.js](https://nextjs.org/) as the UI framework and it's [API Routes](https://nextjs.org/docs/api-routes/introduction) to create Node.js serverless functions, and [Hasura](https://hasura.io/) to generate a GraphQL API to help us query and mutate data stored in our [Heroku](https://dashboard.heroku.com/login) database.
+A super simple, secure social media site where you can share photos of your kitties and see other people's kitty galleries! This website leverages [Magic](https://magic.link/) to enable passwordless auth, [Next.js](https://nextjs.org/) as the UI framework and it's [API Routes](https://nextjs.org/docs/api-routes/introduction) to create Node.js serverless functions, and [Hasura](https://hasura.io/) to generate a GraphQL API to help query and mutate data stored in the [Heroku](https://dashboard.heroku.com/login) database.
 
 # Demo
-TBD
+https://boxi-9wbyfsec3-seemcat.vercel.app/
 
 # Quick start instructions
 ```txt
-$ git clone TBD
+$ git clone https://github.com/seemcat/boxi.git
 $ cd boxi
 $ mv .env.local.example .env.local
 $ yarn install
@@ -23,4 +23,4 @@ NEXT_PUBLIC_HASURA_GRAPHQL_URL=your-graphql-api-server
 ```
 
 # Video Tutorial
-TBD
+Coming soon!
