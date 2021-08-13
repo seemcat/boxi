@@ -26,10 +26,15 @@ const AddKittyForm = ({ setKittyPicUrlAdded, isLoading, setIsLoading }) => {
 
   const addKittyQuery = {
     query: `mutation {
-      insert_kitties_one(object: {pic_url: "${kittyPicUrl}", user_id: "${user?.issuer}"}) {
-        pic_url
-      }
-    }`,
+      insert_kitties_one(object: 
+        { 
+          pic_url: "${kittyPicUrl}", 
+          user_id: "${user?.issuer}"
+        }) 
+        {
+          pic_url
+        }
+      }`,
   };
 
   return (

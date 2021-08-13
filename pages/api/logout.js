@@ -10,7 +10,8 @@ export default async function logout(req, res) {
     let user = jwt.verify(token, process.env.JWT_SECRET);
     removeTokenCookie(res);
 
-    // Add the try/catch because a user's session may have already expired with Magic (expired 7 days after login)
+    // Add the try/catch because a user's session may have
+    // already expired with Magic (expires 7 days after login)
     try {
       await magic.users.logoutByIssuer(user.issuer);
     } catch (error) {

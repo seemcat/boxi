@@ -8,12 +8,13 @@ const AllKittyPics = ({ kittyPics }) => {
   return (
     <>
       {kittyPics.map((data) => {
+        const username = data && data.user && data.user.username ? data.user.username : "";
         return (
           <div className="kitty-item-container" key={data.id}>
             <div className="kitty-container">
-              <Link href="/[user]" as={`/${data && data.user_id}`}>
+              <Link href={{ pathname: "/[user]", query: { user, username }}} as={`/${data && data.user_id}`}>
                 <a className="username">
-                  {data && data.user && data.user.username}
+                  {username}
                 </a>
               </Link>
               <Image src={data.pic_url} alt="Kitty" width="450" height="450" />

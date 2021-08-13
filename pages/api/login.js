@@ -65,7 +65,14 @@ async function createNewUser(
 ) {
   let query = {
     query: `mutation {
-      insert_users_one( object: { email: "${email}", issuer: "${issuer}", publicAddress: "${publicAddress}", username: "${username}" }) {
+      insert_users_one(object: 
+        { 
+          email: "${email}", 
+          issuer: "${issuer}", 
+          publicAddress: "${publicAddress}", 
+          username: "${username}" 
+        }) 
+        {
         email
         username
       }

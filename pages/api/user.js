@@ -9,7 +9,8 @@ export default async function user(req, res) {
     let user = jwt.verify(token, process.env.JWT_SECRET);
     let { issuer, publicAddress, email } = user;
 
-    // Refresh the JWT for the user each time they send a request to /user so they only get logged out after SESSION_LENGTH_IN_DAYS of inactivity
+    // Refresh the JWT for the user each time they send a request
+    // to /user so they only get logged out after SESSION_LENGTH_IN_DAYS of inactivity
     let newToken = jwt.sign(
       {
         issuer,
@@ -27,7 +28,8 @@ export default async function user(req, res) {
       process.env.JWT_SECRET
     );
 
-    user.token = newToken; // send JWT in response to the client, necessary for API requests to Hasrua
+    // send JWT in response to the client, necessary for API requests to Hasura
+    user.token = newToken;
     setTokenCookie(res, newToken);
 
     res.status(200).json({ user });

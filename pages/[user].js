@@ -3,11 +3,11 @@ import UserKittyPics from "../components/kitties/user-kitty-pics";
 
 const User = () => {
   const router = useRouter();
-  const { user } = router.query;
+  const { user, username } = router.query;
 
   return (
     <div>
-      <p>User: {user}</p>
+      <p>User: {username}</p>
       <UserKittyPics userId={user} />
     </div>
   );
